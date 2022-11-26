@@ -29,6 +29,8 @@ public class Lambda_01 {
         printCiftElFunctional(sayi);
         System.out.println();
 
+
+
         // TASK  : functional Programming ile list elemanlarinin 34den küçük cift olanlarini
         // ayni satirda aralarina bosluk birakarak print ediniz
         printCiftOtcKckFunctional(sayi);
@@ -37,12 +39,22 @@ public class Lambda_01 {
 
 
 
+    }
 
+    // Yukaridaki taski filter() kismini method referance ile yapalim
+    public static boolean ciftBul(int a){
+        return a%2 ==0;
+    }
 
+    public static void printCiftElFunctional1(List<Integer> sayi) {
+        sayi.
+                stream().
+                filter(Lambda_01::ciftBul).//method referance
+                forEach(Lambda_01::yazdir);
     }
 
     public static void printCiftOtcBykFunctional(List <Integer> sayi){
-        sayi.stream().filter(t->t>30 || t%2==0).forEach(Lambda_01::yazdir);
+        sayi.stream().filter(t-> t>30 || t%2==0).forEach(Lambda_01::yazdir);
     }
 
     public static void printCiftOtcKckFunctional(List <Integer> sayi){
